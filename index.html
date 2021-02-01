@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StoreMap</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/agency.css" rel="stylesheet">
+		<!-- Plugin JavaScript <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,places,visualization"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>		
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtVdXUjbyiCPYE0EUzcOxIUkTIvcP-0Ug&libraries=places"></script>
+		
+		<script src="js/jquery.geocomplete.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+		<script type="text/javascript" src="js/markerclusterer.js"></script>
+		<script>
+			var script = '<script src="js/richmarker';
+			if (document.location.search.indexOf('compiled') !== -1) {
+				script += '-compiled';
+			}
+			script += '.js"><' + '/script>';
+			document.write(script);
+		</script>
+		<script src="js/config.js"></script>
+		<!-- Firebase UI -->
+		<script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+		<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+
+	</head>
+	<body>
+		<div id="floating-panel">
+			<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+		</div>
+
+		
+		
+		<div id="floating-user">
+			<div class="fa fa-user-circle" id="user" ></div>
+			<div id="user-main">
+				<div id="user-signed-in" class="hidden">
+					<div id="user-info">
+						<div id="photo-container">
+							<img id="photo"></img>
+						</div>
+						<div id="name"></div>
+						<div id="email"></div>
+						<div class="clearfix"></div>
+					</div>
+					<div id="user-control-panel">
+					</div>
+					<p>
+						<button id="sign-out">Sign Out</button>
+						<button id="delete-account">Delete account</button>
+					</p>
+				</div>
+
+
+				<div id="user-signed-out" class="hidden">
+
+					<div id="firebaseui-spa">
+						<h5>Single Page Application mode:</h5>
+						<div id="firebaseui-container"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="floating-about">
+			<div class="fa fa-question-circle-o" id="about"></div>
+			<div id="about-main">
+			</div>
+		</div>
+
+		<div id="map"></div>
+
+		<div id="right_slider_scroll" class="hidden">
+			<div id="right_fb_tab">
+				<div class="material-icons" >store_mall_directory</div>
+			</div>
+
+			<div id="right_slider_content">
+				<div class="abgne_tab">
+					<ul class="tabs">
+						<li><a href="#tab0">Store</a></li>
+					</ul>
+
+					<div class="tab_container">
+						<div  class="tab_content">
+							<div id="content_left">
+							</div>
+							<div id="content_right">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+
+		<script src="js/app.js"></script>
+	</body>
+</html>
